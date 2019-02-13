@@ -1,0 +1,42 @@
+﻿@*@model LeHospital.Models.Appointment*@
+@model LeHospital.Models.MakeReservation
+
+@{
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Add Appointment";
+    //Layout = "~/views/shared/";
+}
+<link href="~/Content/Main.css" rel="stylesheet" />
+<h2>Add Appointment</h2>
+
+@using (Html.BeginForm("AddAppointment", "Appointments"))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("Patient File Number", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.fileno)
+            </div>
+        </div>
+
+        @*@var h = ViewData["ClinicId"]; // Not Working becuase ViewData is used to pass data between 2 actions,
+        regardles they are in the same controller or not*@
+        @*<p>@ViewBag.ip</p> //Working*@
+        <div class="form-group">
+            @Html.Label("Clinic Number", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.appId, (Guid)ViewBag.ip)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+     </div>
+ }

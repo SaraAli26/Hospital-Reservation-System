@@ -1,0 +1,71 @@
+﻿@model LeHospital.Models.Clinic
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Clinic</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ClinicNo)*@
+            Clincic No
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClinicNo)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.DateTime)*@
+            Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTime)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.AmPm)*@
+            Am - Pm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmPm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Doctor.Name)*@
+            Doctor Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doctor.Name)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Specialty.Name)*@
+            Specialty
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specialty.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

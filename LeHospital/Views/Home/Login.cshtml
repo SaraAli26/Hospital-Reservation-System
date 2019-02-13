@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="container1">
+    <h2>Login</h2>
+    <div class="container3">
+        <div class="smallgrid">
+            <img src="~/Images/login.png" />
+            @Html.ActionLink("Log in as a Receptionist", "ReceptionistLogin", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", style = "color:#0D3D4C" })
+                </div>
+        <div class="smallgrid">
+            <img src="~/Images/login.png" />
+            @Html.ActionLink("Log in as a Doctor", "DoctorLogin", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", style = "color:#0D3D4C" })
+        </div>
+        <div class="smallgrid">
+            <img src="~/Images/login.png" />
+            @Html.ActionLink("Admin", "ReceptionistLogin", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", style = "color:#0D3D4C" })
+        </div>
+        </div>
+    </div>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="500422eda60c4081be36c2d5a3e526cb" Name="Diagram1">
+        <EntityTypeShape EntityType="LeHospitalModel.Appointment" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeHospitalModel.Clinic" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeHospitalModel.Doctor" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeHospitalModel.Patient" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeHospitalModel.Specialty" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="LeHospitalModel.FK_Appointments_Clinics" ManuallyRouted="false" />
+        <AssociationConnector Association="LeHospitalModel.FK_Appointments_Patients" ManuallyRouted="false" />
+        <AssociationConnector Association="LeHospitalModel.FK_Clinics_Doctors" ManuallyRouted="false" />
+        <AssociationConnector Association="LeHospitalModel.FK_Clinics_Specialties" ManuallyRouted="false" />
+        <AssociationConnector Association="LeHospitalModel.FK_Doctors_Specialties" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LeHospitalModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LeHospitalModel.AspNetRole" Width="1.5" PointX="5.75" PointY="10.5" />
+        <EntityTypeShape EntityType="LeHospitalModel.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="11.625" />
+        <EntityTypeShape EntityType="LeHospitalModel.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="9" />
+        <EntityTypeShape EntityType="LeHospitalModel.AspNetUser" Width="1.5" PointX="8" PointY="9.375" />
+        <AssociationConnector Association="LeHospitalModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="LeHospitalModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="LeHospitalModel.AspNetUserRoles" />
+        <AssociationConnector Association="LeHospitalModel.FK_Doctors_AspNetUsers" />
+        <AssociationConnector Association="LeHospitalModel.FK_Patients_AspNetUsers" />
+        <AssociationConnector Association="LeHospitalModel.FK_Appointments_AspNetUsers" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

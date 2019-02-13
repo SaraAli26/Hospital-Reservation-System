@@ -1,0 +1,112 @@
+﻿@model LeHospital.Models.Clinic
+
+@{
+    ViewBag.Title = "Create";
+}
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<h3>Add new available Clinic</h3>
+
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <input type="date" id="input1" name="input1">
+    <div class="form-group">
+        @Html.LabelFor(model => model.ClinicNo, "Clinic No", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.ClinicNo, new { htmlAttributes = new { @class = "form-control" } })*@
+            <h5>@Html.RadioButtonFor(model => model.ClinicNo, "1")Clinic (1) </h5>
+            <h5>@Html.RadioButtonFor(model => model.ClinicNo, "2")Clinic (2)</h5>
+            <h5>@Html.RadioButtonFor(model => model.ClinicNo, "3")Clinic (3)</h5>
+            <h5>@Html.RadioButtonFor(model => model.ClinicNo, "4")Clinic (4)</h5>
+            <h5>@Html.RadioButtonFor(model => model.ClinicNo, "5")Clinic (5)</h5>
+            @Html.ValidationMessageFor(model => model.ClinicNo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DateTime, "Date", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DateTime, "", new { @class = "form-control", @id="date" })
+            @Html.ValidationMessageFor(model => model.DateTime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AmPm, "AmPm ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("AmPm", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.AmPm, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Time, "Time ", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Time", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Time, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SpecialityId, "Speciality", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("SpecialityId", null, htmlAttributes: new { @class = "form-control", @id = "Specialties" })
+            @Html.ValidationMessageFor(model => model.SpecialityId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DoctorId, "Doctor Name", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(x => x.DoctorId, new List<SelectListItem>(), "--Select--", new { @class = "form-control", @id = "Doctors" })
+            @*@Html.DropDownList("DoctorId", null, htmlAttributes: new { @class = "form-control", @id = "Doctors" })*@
+            @Html.ValidationMessageFor(model => model.DoctorId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("View Clinics", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#Specialties').change(function () {
+            $.ajax({
+                type: "post",
+                url: "/Clinics/GetDoctors",
+                data: { SpecialtiesId: $('#Specialties').val() },
+                datatype: "json",
+                traditional: true,
+                success: function (data) {
+                    var doctor = "<select  id='Doctors' class = 'form-control'>";
+                    doctor = doctor + '<option class = "form-control" value="">--Select--</option>';
+                    for (var i = 0; i < data.length; i++) {
+                        doctor = doctor + '<option class = "form-control" value=' + data[i].Value + '>' + data[i].Text + '</option>';
+                    }
+                   doctor = doctor + '</select>';
+                    $('#Doctors').html(doctor);
+                }
+            });
+        });
+    });
+</script>  

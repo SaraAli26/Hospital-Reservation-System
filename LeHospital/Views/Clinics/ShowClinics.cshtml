@@ -1,0 +1,66 @@
+﻿@model IEnumerable<LeHospital.Models.Clinic>
+
+@{
+    ViewBag.Title = "Show Clinics";
+}
+
+<h2>Available Clinic Dates & Times</h2>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClinicNo)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DateTime)*@
+            Date
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmPm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Doctor.Name)*@
+            Doctor
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Specialty.Name)*@
+            Specialty
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClinicNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmPm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doctor.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Specialty.Name)
+        </td>
+        <td>
+            @*@Html.TextBox("PatientFileNumber", "PatientFileNumber", new { @class = "form-control" })*@
+
+
+            @Html.ActionLink("Make an Appointment", "MakeAppointment", "Appointments", new { id = item.Id }, null)
+
+        </td>
+    </tr>
+}
+
+</table>

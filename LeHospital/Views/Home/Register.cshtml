@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="container1">
+<h2>Register</h2>
+
+<div class="container2">
+    <div class="smallgrid">
+        <img src="~/Images/login.png" />
+        @Html.ActionLink("Register as a Receptionist", "ReceptionistRegister", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", style = "color:#0D3D4C" })
+    </div>
+    <div class="smallgrid">
+        <img src="~/Images/login.png" />
+        @Html.ActionLink("Register as a Doctor", "DoctorRegister", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", style = "color:#0D3D4C" })
+    </div>
+</div>
+</div>

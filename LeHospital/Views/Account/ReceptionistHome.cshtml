@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Receptionist Home";
+}
+@*<p>
+            @Html.ActionLink("View Clinics", "Index", "Clinics")
+    </p>*@
+
+<div class="container1">
+    <h2>Receptionist Home</h2>
+
+    <div class="container3">
+
+        <div class="smallgrid">
+            <img src="~/Images/appointment.png" />
+            @Html.ActionLink("Make Appointment", "PatientHome", "Account")
+        </div>
+
+        <div class="smallgrid">
+            <img src="~/Images/files.png" />
+            @Html.ActionLink("Add new Patient file", "Create", "Patients")
+        </div>
+
+        <div class="smallgrid">
+            <img src="~/Images/cancel_reservation.png" height="220" width="220"/>
+            @Html.ActionLink("Cancel Apointment", "CancelAppoitment", "Appointment")
+        </div>
+    </div>
+</div>

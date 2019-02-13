@@ -1,0 +1,17 @@
+﻿@model LeHospital.Models.Doctor
+
+@{
+    ViewBag.Title = "DoctorHome";
+}
+
+
+<div class="container1">
+    <h2>Doctor Home</h2>
+
+    <div class="container4">
+        <div class="smallgrid">
+            <img src="~/Images/appointment.png" />
+            @Html.ActionLink("View My Appointments", "ViewDoctorAppointments", "Appointments")
+        </div>
+    </div>
+</div>

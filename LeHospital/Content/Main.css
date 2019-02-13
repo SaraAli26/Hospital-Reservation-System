@@ -1,0 +1,178 @@
+﻿
+.item1 {
+    background: LightSkyBlue;
+}
+
+.item2 {
+    background: LightSalmon;
+}
+
+.item3 {
+    background: PaleTurquoise;
+}
+
+.item4 {
+    background: LightPink;
+}
+
+.item5 {
+    background: PaleGreen;
+    /* add your code below this line */
+    /* add your code above this line */
+}
+
+.containerr {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+.overlay {
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(244, 244, 244, 0.60);
+}
+
+.row {
+    margin-right: 10px;
+    margin-left: 0px;
+}
+
+.h {
+    width: 100%;
+}
+
+.description {
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+}
+
+.description h1 {
+        color: #0D3D4C;
+    }
+.description p {
+        color: #666;
+        font-size: 20px;
+        width: 50%;
+        line-height: 1.5;
+    }
+.description button {
+        border: 1px solid #0D3D4C;
+        background: #0D3D4C;
+        color: #fff;
+    }
+
+.description button:hover {
+            color: #333;
+            background-color: #e6e6e6;
+            border-color: #adadad;
+        }
+
+.team {
+    margin: 4em 0;
+    position: relative;
+}
+
+.team h1 {
+        color: #0D3D4C;
+        margin: 2em;
+    }
+
+.team .item {
+        position: relative;
+    }
+
+.team .des {
+        background: #0D3D4C;
+        color: #fff;
+        text-align: center;
+        border-bottom-left-radius: 93%;
+        transition: .3s ease-in-out;
+    }
+.contact-form {
+    /*margin: 6em 0;*/
+    /*position: relative;*/
+}
+
+.contact-form h1 {
+        padding: 1em 1px;
+        color: #0D3D4C;
+    }
+.contact-form .right {
+        max-width: 600px;
+    }
+.contact-form .right .btn-secondary {
+        background: #0D3D4C;
+        color: #fff;
+        border: 0;
+    }
+.contact-form .right .form-control::placeholder {
+        color: #888;
+        font-size: 16px;
+    }
+.container1 {
+    margin: 70px auto;
+    padding: 15px;
+    border: 0px solid;
+    border-radius: 5px;
+    background: #e3e0cf;
+    text-align: center;
+    
+}
+.container2 {
+    margin: 70px auto;
+    padding: 15px;
+    border: 0px solid;
+    border-radius: 5px;
+    background: #e3e0cf;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+.container3 {
+    margin: 70px auto;
+    padding: 15px;
+    border: 0px solid;
+    border-radius: 5px;
+    background: #e3e0cf;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+.container4 {
+    margin: 70px auto;
+    padding: 15px;
+    border: 0px solid;
+    border-radius: 5px;
+    background: #e3e0cf;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+.smallgrid {
+    display:flex;
+    flex-direction:column;
+    margin: 30px auto;
+    padding: 15px;
+    border: 0px solid;
+    border-radius: 5px;
+    background: #fff;
+}
+.titles h4 {
+   color:#0D3D4C;
+}
+a {
+    color: #0D3D4C;
+}
